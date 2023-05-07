@@ -167,21 +167,14 @@ export default function Main(props) {
                     />
                     <View style={styles.productText}>
                       <Text style={styles.productName}>
-                        &#91; {product.p_name} &#93;
-                      </Text>
-                      <Text style={styles.productCountry}>
-                        {product.p_country}
+                        &#91; {product.p_country} &#93;&nbsp;&nbsp;
+                        {product.p_name}
                       </Text>
                       <Text style={styles.productPrice}>
                         {product.price
                           .toString()
                           .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
                         원
-                      </Text>
-                    </View>
-                    <View style={styles.productFooter}>
-                      <Text style={styles.productDate}>
-                        {dayjs(product.createdAt).format("YY/MM")}
                       </Text>
                     </View>
                   </View>
@@ -343,28 +336,20 @@ const styles = StyleSheet.create({
   },
   productImg: {
     width: "100%",
-    height: 210,
+    height: 180,
     objectFit: "cover",
   },
   productText: {
     padding: 16,
   },
-  productFooter: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    padding: 12,
-  },
   productName: {
-    fontSize: 16,
+    color: "#00000099",
+    fontSize: 18,
   },
   productPrice: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: "600",
     marginTop: 8,
-  },
-  productDate: {
-    fontSize: 16,
   },
   /* 마감임박 */
   amountCard: {
